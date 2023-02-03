@@ -7,6 +7,94 @@
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-func.js"></script>
 <!--[if IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+<style>
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active1, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
 </head>
 <body>
 <!-- START PAGE SOURCE -->
@@ -17,27 +105,22 @@
       <ul>
         <li><a class="twitter" href="#">twitter</a></li>
         <li><a class="facebook" href="#">facebook</a></li>
-        <li><a class="vimeo" href="#">vimeo</a></li>
-        <li><a class="rss" href="#">rss</a></li>
       </ul>
     </div>
     <div id="navigation">
       <ul>
-        <li><a class="active" href="#">HOME</a></li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">IN THEATERS</a></li>
-        <li><a href="#">COMING SOON</a></li>
-        <li><a href="#">CONTACT</a></li>
-        <li><a href="#">ADVERTISE</a></li>
+        <li><a class="active" href="index.html">HOME</a></li>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
       </ul>
     </div>
     <div id="sub-navigation">
       <ul>
         <li><a href="index.html" style="color: orange;">SHOW ALL</a></li>
         <li><a href="latest.html">LATEST </a></li>
-        <li><a href="#">MOST POPULAR</a></li>
-        <li><a href="#">1990s & 2000s</a></li>
-        <li><a href="#">COMING SOON</a></li>
+        <li><a href="mostpopular.html">MOST POPULAR</a></li>
+        <li><a href="1990s&2000s.html">1990s & 2000s</a></li>
+        <li><a href="comingsoon.html">COMING SOON</a></li>
         
       </ul>
       <div id="search">
@@ -66,7 +149,7 @@
             <span class="comments">1249</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">AIRFORCE THE MOVIE: SELAGI BERNYAWA</span></span> <a href="#"><img src="css/images/mv2.jpeg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/A6__oM8WMtU" target="blank"><span class="play"><span class="name">AIRFORCE THE MOVIE: SELAGI BERNYAWA</span></span> <img src="css/images/mv2.jpeg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -75,7 +158,7 @@
             <span class="comments">174</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">REMP-IT 2</span></span> <a href="#"><img src="css/images/mv3.jpg" alt="" /></a> </div>
+          <div class="movie-image"><a href="https://youtu.be/MVFbCmpDQ94"> <span class="play"><span class="name">REMP-IT 2</span></span> <img src="css/images/mv3.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -84,7 +167,7 @@
             <span class="comments">46</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">ABANG LONG FADIL 3</span></span> <a href="#"><img src="css/images/mv4.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/7mccdEkwrZM"> <span class="play"><span class="name">ABANG LONG FADIL 3</span></span> <img src="css/images/mv4.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -93,7 +176,7 @@
             <span class="comments">238</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">MECHAMATO MOVIE</span></span> <a href="#"><img src="css/images/mv5.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/kjfNI9XOo5Y"> <span class="play"><span class="name">MECHAMATO MOVIE</span></span> <img src="css/images/mv5.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -102,7 +185,7 @@
             <span class="comments">245</span> </div>
         </div>
         <div class="movie last">
-          <div class="movie-image"> <span class="play"><span class="name">THE ASSISTANT</span></span> <a href="#"><img src="css/images/mv6.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/HM6aWqHxewo"> <span class="play"><span class="name">THE ASSISTANT</span></span> <img src="css/images/mv6.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -115,10 +198,10 @@
       <div class="box">
         <div class="head">
           <h2>MOST POPULAR</h2>
-          <p class="text-right"><a href="#">See all</a></p>
+          <p class="text-right"><a href="mostpopular.html">See all</a></p>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">PASKAL</span></span> <a href="#"><img src="css/images/mv13.jfif" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/MElVXaHhbCk"> <span class="play"><span class="name">PASKAL</span></span> <img src="css/images/mv13.jfif" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -127,7 +210,7 @@
             <span class="comments">298</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">HANTU KAK LIMAH</span></span> <a href="#"><img src="css/images/mv14.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/J5N_dUvpEa8"><span class="play"><span class="name">HANTU KAK LIMAH</span></span> <img src="css/images/mv14.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -136,7 +219,7 @@
             <span class="comments">587</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">MUNAFIK 2</span></span> <a href="#"><img src="css/images/mv15.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/1l_vAO5e8fQ"> <span class="play"><span class="name">MUNAFIK 2</span></span> <img src="css/images/mv15.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -145,7 +228,7 @@
             <span class="comments">234</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">EJEN ALI: THE MOVIE</span></span> <a href="#"><img src="css/images/mv17.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/GavyXO0FzKc"> <span class="play"><span class="name">EJEN ALI: THE MOVIE</span></span> <img src="css/images/mv17.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -154,7 +237,7 @@
             <span class="comments">311</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">POLIS EVO</span></span> <a href="#"><img src="css/images/mv16.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/1AdTm41WhlY"> <span class="play"><span class="name">POLIS EVO</span></span> <img src="css/images/mv16.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -163,7 +246,7 @@
             <span class="comments">436</span> </div>
         </div>
         <div class="movie last">
-          <div class="movie-image"> <span class="play"><span class="name">PUTERI GUNUNG LEDANG</span></span> <a href="#"><img src="css/images/mv18.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/5w0o_zUxjU4"> <span class="play"><span class="name">PUTERI GUNUNG LEDANG</span></span> <img src="css/images/mv18.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -176,10 +259,10 @@
       <div class="box">
         <div class="head">
           <h2>1990s & 2000s</h2>
-          <p class="text-right"><a href="#">See all</a></p>
+          <p class="text-right"><a href="1990s&2000s.html">See all</a></p>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">SEMBILU II</span></span> <a href="#"><img src="css/images/mv7.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/R6HHi_NwVoE"> <span class="play"><span class="name">SEMBILU II</span></span> <img src="css/images/mv7.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -188,7 +271,7 @@
             <span class="comments">79</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">MARIA MARIANA</span></span> <a href="#"><img src="css/images/mv8.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/Kr5Y4Bse5HI"> <span class="play"><span class="name">MARIA MARIANA</span></span> <img src="css/images/mv8.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -197,7 +280,7 @@
             <span class="comments">58</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">MARIA MARIANA II</span></span> <a href="#"><img src="css/images/mv9.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/p3QQ9bCZ-0s"> <span class="play"><span class="name">MARIA MARIANA II</span></span> <img src="css/images/mv9.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -206,7 +289,7 @@
             <span class="comments">76</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">JOGHO</span></span> <a href="#"><img src="css/images/mv10.webp" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/e-aXEoErKzY"> <span class="play"><span class="name">JOGHO</span></span> <img src="css/images/mv10.webp" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -215,7 +298,7 @@
             <span class="comments">25</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">CICAKMAN</span></span> <a href="#"><img src="css/images/mv11.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/AklmyWnpinM"> <span class="play"><span class="name">CICAKMAN</span></span> <img src="css/images/mv11.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -224,7 +307,7 @@
             <span class="comments">102</span> </div>
         </div>
         <div class="movie last">
-          <div class="movie-image"> <span class="play"><span class="name">PISAU CUKUR</span></span> <a href="#"><img src="css/images/mv12.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/LlLp3JxKxLQ"> <span class="play"><span class="name">PISAU CUKUR</span></span> <img src="css/images/mv12.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -238,10 +321,10 @@
     <div class="box">
       <div class="head">
           <h2>COMING SOON</h2>
-          <p class="text-right"><a href="#">See all</a></p>
+          <p class="text-right"><a href="comingsoon.html">See all</a></p>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">HARUM MALAM</span></span> <a href="#"><img src="css/images/mv19.jpg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/E4pdJVZCMms"> <span class="play"><span class="name">HARUM MALAM</span></span> <img src="css/images/mv19.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -250,7 +333,7 @@
             <span class="comments">34</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">IMAGINUR</span></span> <a href="#"><img src="css/images/mv20.jpg" alt="" /></a> </div>
+          <div class="movie-image"><a href="https://youtu.be/kf0kB6hNSoA"> <span class="play"><span class="name">IMAGINUR</span></span> <img src="css/images/mv20.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -259,7 +342,7 @@
             <span class="comments">104</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">PULAU</span></span> <a href="#"><img src="css/images/mv21.jpg" alt="" /></a> </div>
+          <div class="movie-image"><a href="https://youtu.be/3MgtKfMNgEU"> <span class="play"><span class="name">PULAU</span></span> <img src="css/images/mv21.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -268,7 +351,7 @@
             <span class="comments">869</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">DUAN NAGO BOGHO</span></span> <a href="#"><img src="css/images/mv22.jpeg" alt="" /></a> </div>
+          <div class="movie-image"> <a href="https://youtu.be/cKl1M5suEsQ"><span class="play"><span class="name">DUAN NAGO BOGHO</span></span> <img src="css/images/mv22.jpeg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -277,7 +360,7 @@
             <span class="comments">11</span> </div>
         </div>
         <div class="movie">
-          <div class="movie-image"> <span class="play"><span class="name">SUMPAHAN SYAITAN</span></span> <a href="#"><img src="css/images/mv23.jpeg" alt="" /></a> </div>
+          <div class="movie-image"><a href="https://youtu.be/gaSplpqlBWg"> <span class="play"><span class="name">SUMPAHAN SYAITAN</span></span> <img src="css/images/mv23.jpeg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -286,7 +369,7 @@
             <span class="comments">29</span> </div>
         </div>
         <div class="movie last">
-          <div class="movie-image"> <span class="play"><span class="name">IMAM</span></span> <a href="#"><img src="css/images/mv24.jpg" alt="" /></a> </div>
+          <div class="movie-image"><a href="https://youtu.be/bgXNS7b66g0 "> <span class="play"><span class="name">IMAM</span></span> <img src="css/images/mv24.jpg" alt="" /></a> </div>
           <div class="rating">
             <p>RATING</p>
             <div class="stars">
@@ -297,44 +380,77 @@
         <div class="cl">&nbsp;</div>
       </div>
     </div>
-    <div id="news">
-      <div class="head">
-        <h3>NEWS</h3>
-        <p class="text-right"><a href="#">See all</a></p>
-      </div>
-      <div class="content">
-        <p class="date">12.04.09</p>
-        <h4>Disney's A Christmas Carol</h4>
-        <p>&quot;Disney's A Christmas Carol,&quot; a multi-sensory thrill ride re-envisioned by Academy Award&reg;-winning filmmaker Robert Zemeckis, captures... </p>
-        <a href="#">Read more</a> </div>
-      <div class="content">
-        <p class="date">11.04.09</p>
-        <h4>Where the Wild Things Are</h4>
-        <p>Innovative director Spike Jonze collaborates with celebrated author Maurice Sendak to bring one of the most beloved books of all time to the big screen in &quot;Where the Wild Things Are,&quot;...</p>
-        <a href="#">Read more</a> </div>
-      <div class="content">
-        <p class="date">10.04.09</p>
-        <h4>The Box</h4>
-        <p>Norma and Arthur Lewis are a suburban couple with a young child who receive an anonymous gift bearing fatal and irrevocable consequences.</p>
-        <a href="#">Read more</a> </div>
-    </div>
-    <div id="coming">
-      <div class="head">
-        <h3>COMING SOON<strong>!</strong></h3>
-        <p class="text-right"><a href="#">See all</a></p>
-      </div>
-      <div class="content">
-        <h4>The Princess and the Frog </h4>
-        <a href="#"><img src="css/images/coming-soon1.jpg" alt="" /></a>
-        <p>Walt Disney Animation Studios presents the musical &quot;The Princess and the Frog,&quot; an animated comedy set in the great city of New Orleans...</p>
-        <a href="#">Read more</a> </div>
-      <div class="cl">&nbsp;</div>
-      <div class="content">
-        <h4>The Princess and the Frog </h4>
-        <a href="#"><img src="css/images/coming-soon2.jpg" alt="" /></a>
-        <p>Walt Disney Animation Studios presents the musical &quot;The Princess and the Frog,&quot; an animated comedy set in the great city of New Orleans...</p>
-        <a href="#">Read more</a> </div>
-    </div>
+    <br>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <video width="100%" height="500px" controls>
+  <div class="numbertext">1 / 3</div>
+  <source src="css/video/imaginur.mp4" type="video/mp4">
+  <div class="text"style="font-family: fantasy; color: black;">F & N PRODUCTIONS TEAM</div>
+  </video>
+</div>
+
+<div class="mySlides fade">
+  
+  <video width="100%" height="500px" controls>
+  <div class="numbertext">2 / 3</div>
+  <source src="css/video/matkilau.mp4" type="video/mp4">
+  <div class="text"style="font-family: fantasy; color: black;">F & N PRODUCTIONS TEAM</div>
+  </video>
+  
+</div>
+
+<div class="mySlides fade">
+  <video width="100%" height="500px" controls>
+  <div class="numbertext">3 / 3</div>
+  <source src="css/video/ejenali.mp4" type="video/mp4">
+  <div class="text" style="font-family: fantasy; color: black;">F & N PRODUCTIONS TEAM</div>
+  </video>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active1", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active1";
+}
+</script>
+
     <div class="cl">&nbsp;</div>
   </div>
   <div id="footer">
